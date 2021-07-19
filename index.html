@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>register</title>
+        <link rel="stylesheet" type="text/css" href="sty.css">
+    </head>
+    <body>
+        <div class="html_form">
+            <form onsubmit="return validation()" name="submit-googlesheet" method="post" >
+                <h2>Register</h2>
+                <input type="text" id="username" name="Name" placeholder="FullName" ><br>
+                <span id="errorname" style="color:red;"></span> 
+                <input type="email" id="Email" name="EmailId" placeholder="Email"><br>
+                <span id="errorname" style="color:red;"></span> 
+                <input type="number" id="Number" name="Number" placeholder="ContactNumber"><br>
+                <span id="errorname" style="color:red;"></span> 
+                <select required name="Branch">
+                    <option>--Branch--</option>
+                    <option>CSE/IT</option>
+                    <option>ECE</option>
+                    <option>EEE</option>
+                    <option>ME/CE</option>
+                </select><br>
+                <select required name="year">
+                    <option>--year--</option>
+                    <option>1st</option>
+                    <option>2nd</option>
+                    <option>3rd</option>
+                    <option>4th</option>
+                </select><br>
+                <input type="text" name="collage Name" placeholder="collage Name" required><br>
+                <button type="submit">Register</button>
+                <button type="reset">refresh</button>
+            </form>
+        </div>
+        <script type="text/javascript">
+        function validation(){
+            var username=document.getElementById("username").value;
+            var email=document.getElementById("email").value;
+            var number=document.getElementById("number").value;
+            
+            var usercheck = /^[A-Za-z]{3,30}$/;
+            var emailcheck = /^[A-Za-z_0-9.]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+            var numbercheck = /^[6789][0-9]{9}$/;
+
+            if(usercheck.test(username)){
+                document.getElementById("errorname").innerHTML=" ";
+            }
+            else{
+                document.getElementById("errorname").innerHTML="**Invalid Name ";
+                return false;
+            }
+            if(emailcheck.test(email)){
+                document.getElementById("erroremail").innerHTML=" ";
+            }
+            else{
+                document.getElementById("erroremail").innerHTML="**Invalid Name ";
+                return false;
+
+            }
+            if(numbercheck.test(number)){
+                document.getElementById("errornumber").innerHTML=" ";
+            }
+            else{
+                document.getElementById("errornumber").innerHTML="**Invalid Name ";
+                return false;
+            }
+
+
+
+        }
+        </script>
+        <script type="text/javascript">
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwUZ0kLHJVOHFVsH_65wpMnuJVyaQqCwVTzO8B64iVL6d77Y5XJ_2JHTCnLmoXY05DVVw/exec'
+            
+        const form = document.forms['submit-googlesheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thankyou"))
+                .catch(error => console.error('Error!', error.message))
+            })
+
+        </script>
+    </body>
+    
+    
+</html>

@@ -1,0 +1,49 @@
+*{
+    margin:0;
+}
+.html_form{
+    padding: 50px;
+}
+.html_form form{
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 1px 1px 16px black;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+.html_form form h2{
+    color: blue;
+    font-size: 25px;
+    font-family: verdana;
+    padding: 10px;
+}
+.html_form form input{
+    width:90%;
+    margin:10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    border-left: 2px solid blue;
+}
+.html_form form select{
+    width:90%;
+    margin:10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    border-left: 2px solid blue;
+}
+.html_form form button{
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    background-color:orange;
+    color: blue;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
